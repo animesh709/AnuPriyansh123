@@ -26,20 +26,19 @@
   </dependencies>
 
   <build>
-    <build>
-  <plugins>
-    <plugin>
-      <groupId>com.heroku.sdk</groupId>
-      <artifactId>heroku-maven-plugin</artifactId>
-      <version>3.0.4</version>
-      <configuration>
-        <appName>${heroku.appName}</appName>
-        <processTypes>
-          <web>java $JAVA_OPTS -cp target/classes:target/dependency/* AnuPri1</web>
-        </processTypes>
-      </configuration>
-    </plugin>
-  </plugins>
-</build>
+    <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals><goal>copy-dependencies</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
   </build>
 </project>
