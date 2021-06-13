@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/AnuPri1
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* AnuPri1
